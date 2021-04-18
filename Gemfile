@@ -32,7 +32,7 @@ gem 'grape-swagger'
 # for consuming the API
 gem 'rest-client'
 
-gem 'sidekiq'
+gem 'sidekiq', '~> 5.2.9' # annoying, but heroku's redis provider doesn't support redis 4 yet
 
 gem 'rexml'
 
