@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 2021-04-18 14:11:22
+  altitude: 1
+
+two:
+  timestamp: 2021-04-18 14:11:22
+  altitude: 1
