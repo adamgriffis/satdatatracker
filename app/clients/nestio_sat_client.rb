@@ -11,7 +11,7 @@ module NestioSatClient
     if response.code == SUCCESS_RESPONSE
       return JSON.parse(response.body)
     else
-      return false
+      raise "Unable to retrieve sat data -- #{response.code}"
     end
   end
 end

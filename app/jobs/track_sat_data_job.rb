@@ -7,12 +7,9 @@ class TrackSatDataJob < ApplicationJob
     if sat_data # actually got data back, try to consume it
       timestring = sat_data['last_updated']
 
-      unless timestring.include?("+")# the date is coming in w/o time zone, it looks like it's in UTC but it's not specified, so force the server to know it's in UTC
-        # if both servers are in UTC this won't matter, but I thought it better to be explici
-        timestring += "+00:00"
-      end
-
-      timestamp = Time.parse(timestring)
+      timestamp = ActiveSupport::TimeZone["UTC"].parse(timestring) # the timestring that comes back doesn't not contain 
+      # timezone info, so we need to force it to be UTC (the server TZ should be UTC so this is irrelevant but for local 
+      # testing and to make absolutely sure we do this)
 
       data = SatelliteDatum.ensure_sat_data(timestamp, sat_data['altitude'])
 
