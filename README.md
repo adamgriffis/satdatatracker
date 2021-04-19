@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Notes 
 
-Things you may want to cover:
+- Can just access the running environment in Heroku: https://gentle-sierra-99423.herokuapp.com/. I'm on a free dyno so it may take a bit to start up the first time but it should be performant after that.
+- I've included a postman collection in the root directory to assist there.
+- I used rails becuase I was in a bit of a time crunch this weekend, similarly I used Grape for the API for the same reason. I did try to push myself on the tests a little, this is my first time testing w/o Rspec (Although the tests are pretty simiple so not a huge swing there.)
 
-* Ruby version
+# How to Setup Local Environment
 
-* System dependencies
+- I've set this up in Heroku so you don't have to if you don't want to. Probably easiet to follow the guide here for setting up rails: https://gorails.com/setup/osx/11.0-big-sur. You'll need to install rbenv, ruby, rails, postgres
 
-* Configuration
+- Once all that is done, you'd need to create the DB:
 
-* Database creation
+```rails db:create```
 
-* Database initialization
+- To run tests
+``` rails test ```
 
-* How to run the test suite
+- To start up the server (and sidekiq -- background jobs processing. I used sidekiq because I originally had the idea to run it using a scheduled task, but turns out the major scheduled background jobs tools don't support sub-minute recurring jobs.)
 
-* Services (job queues, cache servers, search engines, etc.)
+```rails s```
+```bundle exec sidekiq -c 2```
 
-* Deployment instructions
-
-* ...
+- You'll need to let it warm up first as it populates data for a few minutes

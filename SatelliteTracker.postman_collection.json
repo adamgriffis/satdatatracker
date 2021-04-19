@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "2f2cf9e8-f64b-408f-b033-bdf191350f95",
+		"name": "SatelliteTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gentle-sierra-99423.herokuapp.com/api/stats",
+					"protocol": "https",
+					"host": [
+						"gentle-sierra-99423",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gentle-sierra-99423.herokuapp.com/api/health",
+					"protocol": "https",
+					"host": [
+						"gentle-sierra-99423",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
