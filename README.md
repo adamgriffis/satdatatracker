@@ -20,6 +20,7 @@
 - To start up the server (and sidekiq -- background jobs processing. I used sidekiq because I originally had the idea to run it using a scheduled task, but turns out the major scheduled background jobs tools don't support sub-minute recurring jobs.)
 
 ```rails s```
+
 ```bundle exec sidekiq -c 2```
 
 - You'll need to let it warm up first as it populates data for a few minutes
