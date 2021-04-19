@@ -14,6 +14,8 @@
 
 ```rails db:create```
 
+```rails db:migrate```
+
 - To run tests
 ``` rails test ```
 
